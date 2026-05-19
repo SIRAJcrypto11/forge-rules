@@ -5,6 +5,47 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.1.1] — May 2026
+
+### Added — Missing Rules (Chapters 05-10)
+- `rules/05-animation-microinteraction.md` — Complete timing tokens, easing system, all micro-interaction patterns, Tailwind animation config
+- `rules/06-performance.md` — Skeleton laws, code splitting, memoization rules, virtualization, image optimization, bundle discipline, Lighthouse CI config
+- `rules/07-design-system.md` — Full color token system (light+dark), typography scale, spacing grid, border radius, shadow elevation, icon system, component visual standards
+- `rules/08-ux-information-architecture.md` — Information hierarchy, navigation laws, form UX laws, empty/error state templates, UX writing 6 laws, mobile UX laws
+- `rules/09-state-management.md` — 5-level state hierarchy with code examples, form state pattern, anti-patterns
+- `rules/10-naming-conventions.md` — Files, variables, components, hooks, props, handlers, CSS, tests, git, API naming
+
+### Added — Agent Handoff Protocol
+- `agents/handoff-protocol.md` — Explicit chain: CEO→Architect→Coder→Reviewer→Tester→Ship with handoff prompts
+
+### Added — 6 Missing Kiro Skills
+- `kiro-skills/forge-ui/SKILL.md`
+- `kiro-skills/forge-ux/SKILL.md`
+- `kiro-skills/forge-tester/SKILL.md`
+- `kiro-skills/forge-performance/SKILL.md`
+- `kiro-skills/forge-a11y/SKILL.md`
+- `kiro-skills/forge-browser/SKILL.md`
+
+### Added — 2 Missing Checklists
+- `checklists/pre-commit.checklist.md` — Code quality, architecture, security, tests, git checks
+- `checklists/phase-validation.checklist.md` — Concrete validation gates for Phase 0-5+
+
+### Added — 3 New Templates
+- `templates/ARCHITECTURE.template.md` — Complete ARCHITECTURE.md template for new projects
+- `templates/CONVENTIONS.template.md` — Complete CONVENTIONS.md template
+- `templates/feature-module.template/` — Full feature module scaffold (index.js, Page, hook)
+
+### Added — Examples Folder
+- `examples/01-product-brief-example.md` — Real CEO Agent output for an inventory app
+- `examples/02-architecture-example.md` — Real Architect Agent output for the same app
+- `examples/03-agent-prompts-example.md` — Copy-paste prompts for all 11 agents
+
+### Changed
+- `full-rules-single-file.md` — Updated to v2.1.0, added agent system reference and usage guide
+- `README.md` — Complete rewrite with all 18 rules, all 11 agents, all 5 checklists, examples
+
+---
+
 ## [2.1.0] — May 2026
 
 ### Added — Agent System

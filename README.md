@@ -1,4 +1,4 @@
-# 🔥 Forge Rules v2.0
+# 🔥 Forge Rules v2.1
 ### Universal System Architecture & UI/UX Constitution + AI Agent System
 **Standard: Silicon Valley Senior Engineer Level**
 
@@ -14,11 +14,7 @@
 
 2. **An AI agent system** — 11 specialized agents (CEO, Architect, Coder, UI, UX, Reviewer, Security, Tester, Performance, A11y, Browser) that enforce these rules and push any AI model to its highest output quality.
 
-These are designed to be:
-- **Pasted into any AI** (Kiro, Claude, Gemini, GPT) as system instructions
-- **Used as a team standard** for onboarding and code review
-- **Applied to every project** — adapt the domain, never the structure
-- **Model-agnostic** — works with any AI, any platform, zero dependencies
+**Zero AI slop. Every output is production-grade.**
 
 ---
 
@@ -34,24 +30,25 @@ These are designed to be:
 │  🧭 UX         🔍 Reviewer    🔒 Security   🧪 Tester          │
 │  Experience    Quality        Safety        Coverage           │
 │                                                                 │
-│  ⚡ Performance  ♿ A11y       🌐 Browser                       │
-│  Speed          Accessible    Research                         │
+│  ⚡ Performance  ♿ A11y       🌐 Browser    🔗 Handoff         │
+│  Speed          Accessible    Research      Protocol           │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
 | Agent | File | Role |
 |-------|------|------|
-| 🎯 CEO | `agents/ceo.md` | Challenges assumptions, defines scope, produces Product Brief |
-| 🏗️ Architect | `agents/architect.md` | 8-layer system design, data flows, API contracts |
-| 💻 Coder | `agents/coder.md` | Production-grade implementation, one file at a time |
-| 🎨 UI | `agents/ui.md` | Design system enforcement, anti-slop visual quality |
-| 🧭 UX | `agents/ux.md` | User flows, copy quality, form UX, empty states |
-| 🔍 Reviewer | `agents/reviewer.md` | Architecture + correctness + performance + security |
+| 🎯 CEO | `agents/ceo.md` | 5-phase product strategy, 10-section review, Product Brief |
+| 🏗️ Architect | `agents/architect.md` | 8-phase system design, ADRs, risk register, build sequence |
+| 💻 Coder | `agents/coder.md` | Pre-coding protocol, 9-block anatomy, one file at a time |
+| 🎨 UI | `agents/ui.md` | 6-audit visual system, anti-slop detection, component specs |
+| 🧭 UX | `agents/ux.md` | 6-audit UX protocol, 8 copy tests, form/nav/mobile audits |
+| 🔍 Reviewer | `agents/reviewer.md` | 6-phase review, BLOCKING/HIGH/MEDIUM/LOW format |
 | 🔒 Security | `agents/security.md` | OWASP Top 10 + STRIDE threat modeling |
-| 🧪 Tester | `agents/tester.md` | Unit, hook, component, E2E test strategy |
-| ⚡ Performance | `agents/performance.md` | Bundle analysis, render optimization, Lighthouse |
-| ♿ A11y | `agents/a11y.md` | WCAG 2.1 AA compliance, keyboard nav, screen readers |
-| 🌐 Browser | `agents/browser.md` | Competitor analysis, technical research, documentation |
+| 🧪 Tester | `agents/tester.md` | Unit/hook/component/E2E templates, coverage requirements |
+| ⚡ Performance | `agents/performance.md` | Bundle analysis, render audit, Lighthouse budgets |
+| ♿ A11y | `agents/a11y.md` | WCAG 2.1 AA, keyboard nav, screen reader, contrast |
+| 🌐 Browser | `agents/browser.md` | 5 research protocols, competitor + tech analysis |
+| 🔗 Handoff | `agents/handoff-protocol.md` | How agent outputs feed into next agent's inputs |
 
 ### How to Activate Any Agent
 
@@ -72,20 +69,19 @@ Copy `kiro-skills/forge-[agent]/` folders to `~/.kiro/skills/`
 
 ## 🔄 The Sprint Workflow
 
-Every feature follows this sequence:
-
 ```
 THINK → PLAN → BUILD → REVIEW → TEST → SHIP
 
-1. CEO Agent      → Product Brief (before any code)
-2. Architect Agent → ARCHITECTURE.md (before any code)
-3. Coder Agent    → Working code (one file at a time)
-4. Reviewer Agent → Review report (before merge)
-5. Tester Agent   → Test suite (before merge)
-6. Git workflow   → Merged PR
+1. CEO Agent       → Product Brief        (before any code)
+2. Architect Agent → ARCHITECTURE.md      (before any code)
+3. Coder Agent     → Working code         (one file at a time)
+4. Reviewer Agent  → Review report        (before merge)
+5. Tester Agent    → Test suite           (before merge)
+6. Git workflow    → Merged PR
 ```
 
-See `workflows/new-feature.md` for the complete sprint guide.
+See `workflows/new-feature.md` for the complete sprint guide.  
+See `examples/03-agent-prompts-example.md` for copy-paste prompts.
 
 ---
 
@@ -98,7 +94,7 @@ forge-rules/
 ├── FORGE_AGENT_SYSTEM.md        ← Agent system overview
 ├── full-rules-single-file.md    ← ALL rules in one file (paste to AI)
 │
-├── agents/                      ← 11 specialized AI agents
+├── agents/                      ← 11 specialized AI agents + handoff protocol
 │   ├── ceo.md
 │   ├── architect.md
 │   ├── coder.md
@@ -109,20 +105,27 @@ forge-rules/
 │   ├── tester.md
 │   ├── performance.md
 │   ├── a11y.md
-│   └── browser.md
+│   ├── browser.md
+│   └── handoff-protocol.md      ← How agents hand off to each other
 │
 ├── workflows/                   ← Sprint workflows
 │   ├── new-feature.md           ← Full sprint: Think→Plan→Build→Review→Test→Ship
-│   ├── code-review.md           ← Review pipeline
-│   ├── ship.md                  ← Deployment workflow
-│   └── debug.md                 ← Root-cause debug protocol
+│   ├── code-review.md           ← Multi-agent review pipeline
+│   ├── ship.md                  ← Deployment workflow + rollback
+│   └── debug.md                 ← 5-phase root-cause debug protocol
 │
-├── rules/                       ← 18 chapters of Forge Rules
+├── rules/                       ← 18 chapters of Forge Rules (ALL present)
 │   ├── 00-preamble.md
 │   ├── 01-iron-laws.md
 │   ├── 02-project-anatomy.md
 │   ├── 03-eight-layers.md
 │   ├── 04-component-architecture.md
+│   ├── 05-animation-microinteraction.md  ← timing tokens, micro-interactions
+│   ├── 06-performance.md                 ← skeleton laws, code splitting, virtualization
+│   ├── 07-design-system.md               ← color system, typography, spacing, shadows
+│   ├── 08-ux-information-architecture.md ← UX laws, form UX, empty states, copy
+│   ├── 09-state-management.md            ← state hierarchy, form state pattern
+│   ├── 10-naming-conventions.md          ← files, variables, components, git
 │   ├── 11-build-sequence.md
 │   ├── 12-testing.md
 │   ├── 13-security.md
@@ -132,47 +135,76 @@ forge-rules/
 │   ├── 17-ai-prompting-protocol.md
 │   └── 18-forbidden-list.md
 │
-├── kiro-skills/                 ← Kiro-native skill files
+├── kiro-skills/                 ← Kiro-native skill files (all 11 agents)
 │   ├── forge-ceo/SKILL.md
 │   ├── forge-architect/SKILL.md
 │   ├── forge-coder/SKILL.md
 │   ├── forge-reviewer/SKILL.md
-│   └── forge-security/SKILL.md
+│   ├── forge-security/SKILL.md
+│   ├── forge-ui/SKILL.md
+│   ├── forge-ux/SKILL.md
+│   ├── forge-tester/SKILL.md
+│   ├── forge-performance/SKILL.md
+│   ├── forge-a11y/SKILL.md
+│   └── forge-browser/SKILL.md
 │
 ├── templates/                   ← Copy-paste code templates
 │   ├── component.template.jsx
 │   ├── hook.template.js
 │   ├── service.template.js
-│   └── PR-description.template.md
+│   ├── PR-description.template.md
+│   ├── ARCHITECTURE.template.md ← Template for new project ARCHITECTURE.md
+│   ├── CONVENTIONS.template.md  ← Template for new project CONVENTIONS.md
+│   └── feature-module.template/ ← Complete feature module scaffold
+│       ├── index.js
+│       ├── [Module]Page.jsx
+│       └── hooks/use[Module].js
 │
-└── checklists/                  ← Project checklists
-    ├── new-project.checklist.md
-    ├── code-review.checklist.md
-    └── launch-readiness.checklist.md
+├── checklists/                  ← All 5 project checklists
+│   ├── new-project.checklist.md
+│   ├── pre-commit.checklist.md
+│   ├── phase-validation.checklist.md
+│   ├── code-review.checklist.md
+│   └── launch-readiness.checklist.md
+│
+├── examples/                    ← Real end-to-end examples
+│   ├── 01-product-brief-example.md    ← CEO Agent output example
+│   ├── 02-architecture-example.md     ← Architect Agent output example
+│   └── 03-agent-prompts-example.md    ← Copy-paste prompts for all agents
+│
+└── .github/
+    ├── PULL_REQUEST_TEMPLATE.md
+    └── workflows/ci.yml
 ```
 
 ---
 
 ## ⚡ Quick Start
 
-### New Project
+### New Project (from scratch)
 ```
-1. Read checklists/new-project.checklist.md
+1. Read: checklists/new-project.checklist.md
 2. Activate CEO Agent → describe your idea
 3. Activate Architect Agent → paste Product Brief
-4. Follow workflows/new-feature.md
+4. Follow: workflows/new-feature.md
 ```
 
 ### Existing Project Audit
 ```
 Activate Reviewer Agent:
-"Act as Forge Reviewer Agent. Audit [file] against Forge Rules v2.0."
+"Act as Forge Reviewer Agent. Audit [file] against Forge Rules v2.1."
 ```
 
-### AI System Instruction
+### AI System Instruction (paste-and-go)
 ```
 Copy full-rules-single-file.md → paste as system instruction
 Every AI response will follow Forge Rules automatically.
+```
+
+### Kiro Skills Install
+```bash
+# Copy all skills to Kiro
+cp -r kiro-skills/forge-* ~/.kiro/skills/
 ```
 
 ---
@@ -189,19 +221,17 @@ Every AI response will follow Forge Rules automatically.
 
 ---
 
-## 🆕 What's New in v2.0
+## 🆕 What's New in v2.1
 
 | Addition | Description |
 |----------|-------------|
-| **11 AI Agents** | CEO, Architect, Coder, UI, UX, Reviewer, Security, Tester, Performance, A11y, Browser |
-| **4 Workflows** | New Feature, Code Review, Ship, Debug |
-| **Kiro Skills** | Native Kiro skill files for 5 agents |
-| **Chapter 12** | Testing — Unit, integration, component, E2E |
-| **Chapter 13** | Security — OWASP, XSS, CSRF, env vars |
-| **Chapter 14** | Accessibility — WCAG 2.1 AA deep spec |
-| **Chapter 15** | Dark Mode — Token-based theming |
-| **Chapter 16** | Git Workflow — Conventional Commits, PRs |
-| **Chapter 17** | AI Prompting — AI-agnostic protocol |
+| **Rules 05-10** | Animation, Performance, Design System, UX/IA, State Management, Naming — all 18 chapters now complete |
+| **Handoff Protocol** | `agents/handoff-protocol.md` — explicit chain between all agents |
+| **6 New Kiro Skills** | forge-ui, forge-ux, forge-tester, forge-performance, forge-a11y, forge-browser |
+| **2 New Checklists** | pre-commit.checklist.md, phase-validation.checklist.md |
+| **3 New Templates** | ARCHITECTURE.template.md, CONVENTIONS.template.md, feature-module.template/ |
+| **Examples Folder** | Product Brief example, Architecture example, Agent prompts example |
+| **full-rules-single-file.md** | Updated with agent system reference and v2.1 version |
 
 ---
 
@@ -220,6 +250,6 @@ This is a living document. To propose changes:
 
 MIT — Use freely, adapt to your team, keep the attribution.
 
-**Author:** Siraj Nur Ihrom
-**GitHub:** [@SIRAJcrypto11](https://github.com/SIRAJcrypto11)
-**Version:** 2.0.0 — May 2026
+**Author:** Siraj Nur Ihrom  
+**GitHub:** [@SIRAJcrypto11](https://github.com/SIRAJcrypto11)  
+**Version:** 2.1.0 — May 2026

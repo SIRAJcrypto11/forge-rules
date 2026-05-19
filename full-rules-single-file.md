@@ -1,10 +1,29 @@
 # Forge Rules v2.0
 ## Universal System Architecture & UI/UX Constitution
 **Standard: Silicon Valley Senior Engineer Level**
-**Author: Siraj Nur Ihrom | Version: 2.0.0 — May 2026**
+**Author: Siraj Nur Ihrom | Version: 2.1.0 — May 2026**
 **Applies to: ANY complex web application**
+**Repository: github.com/SIRAJcrypto11/forge-rules**
 
 > Paste this entire file as your AI system instruction. It applies to every project, every time.
+
+---
+
+## HOW TO USE THIS FILE
+
+**As a system instruction:** Paste this entire file into your AI's system prompt or custom instructions. Every response will follow Forge Rules automatically.
+
+**With the Agent System:** This file contains the rules. The `agents/` folder contains 11 specialized agents that enforce these rules. Use them in sequence:
+1. `agents/ceo.md` → Product Brief (before any code)
+2. `agents/architect.md` → ARCHITECTURE.md (before any code)
+3. `agents/coder.md` → Implementation (one file at a time)
+4. `agents/reviewer.md` → Code review (before merge)
+5. `agents/tester.md` → Test suite (before merge)
+
+See `agents/handoff-protocol.md` for the complete handoff chain.
+See `examples/03-agent-prompts-example.md` for copy-paste prompts.
+
+---
 
 ---
 
