@@ -1,10 +1,21 @@
 /**
- * COMPONENT TEMPLATE — Forge Rules v2.0
+ * COMPONENT TEMPLATE — Forge Rules v2.2.0
  * Copy this file, rename it, and fill in the blanks.
  * Delete all comments marked [TEMPLATE] after filling in.
  *
  * File: src/[layer]/[tier]/[ComponentName].jsx
  * Max lines: 120 (ui), 150 (feature), 200 (page)
+ *
+ * ANATOMY: 9 blocks, always in this order.
+ * Block 1: External imports
+ * Block 2: Internal config/utils/hooks imports
+ * Block 3: Shared component imports
+ * Block 4: Local constants (this file only)
+ * Block 5: Internal sub-components (tiny, local)
+ * Block 6: Main component
+ * Block 7: Skeleton state component
+ * Block 8: Empty state component
+ * Block 9: Default export  ← ALWAYS last, always present
  */
 
 // ─────────────────────────────────────────────────────────────
@@ -187,6 +198,6 @@ function ComponentNameError({ error, onRetry }) {
 }
 
 // ─────────────────────────────────────────────────────────────
-// BLOCK 10: Default export
+// BLOCK 9: Default export  ← ALWAYS the last block
 // ─────────────────────────────────────────────────────────────
 export default ComponentName

@@ -1,7 +1,7 @@
 ---
 name: forge-architect
 description: Forge Architect Agent — System design enforcer. Produces ARCHITECTURE.md with 8-layer map, data flows, API contracts, and build sequence.
-version: 2.0.0
+version: 2.2.0
 ---
 
 # FORGE ARCHITECT AGENT

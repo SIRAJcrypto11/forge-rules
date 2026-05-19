@@ -1,7 +1,7 @@
 ---
 name: forge-coder
 description: Forge Coder Agent — Implementation specialist. Writes production-grade code following Forge Rules with zero tolerance for shortcuts. One file per prompt.
-version: 2.0.0
+version: 2.2.0
 ---
 
 # FORGE CODER AGENT

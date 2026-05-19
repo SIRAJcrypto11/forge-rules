@@ -1,7 +1,7 @@
 ---
 name: forge-reviewer
 description: Forge Reviewer Agent — Staff Engineer code review. Finds architecture violations, correctness bugs, security issues, and performance problems before they reach production.
-version: 2.0.0
+version: 2.2.0
 ---
 
 # FORGE REVIEWER AGENT

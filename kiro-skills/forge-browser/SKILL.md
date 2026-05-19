@@ -1,7 +1,7 @@
 ---
 name: forge-browser
 description: Forge Browser Agent — Research specialist. Competitor analysis, technical documentation research, design pattern research, market research. Synthesizes into actionable recommendations.
-version: 2.0.0
+version: 2.2.0
 ---
 
 # FORGE BROWSER AGENT

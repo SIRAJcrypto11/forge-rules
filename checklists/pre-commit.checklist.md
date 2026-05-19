@@ -113,21 +113,33 @@
 
 ---
 
-## Quick Commands
+## Quick Commands (PowerShell / Windows)
 
-```bash
-# Check for console.log
-grep -r "console.log" src/ --include="*.js" --include="*.jsx" --include="*.ts" --include="*.tsx"
+```powershell
+# Check for console.log in all source files
+Select-String -Path "src\**\*.js","src\**\*.jsx","src\**\*.ts","src\**\*.tsx" -Pattern "console\.log" -Recurse
 
-# Check for hardcoded colors
-grep -r "#[0-9a-fA-F]\{3,6\}" src/ --include="*.jsx" --include="*.tsx"
+# Check for hardcoded hex colors in JSX/TSX
+Select-String -Path "src\**\*.jsx","src\**\*.tsx" -Pattern "#[0-9a-fA-F]{3,6}" -Recurse
 
-# Run tests
+# Run tests (single run, no watch mode)
 npm run test -- --run
 
 # Run lint
 npm run lint
 
-# Check what's staged
+# Check what's staged before committing
+git diff --staged --stat
+
+# Check for .env accidentally staged
+git diff --staged --name-only | Select-String "\.env"
+```
+
+```bash
+# macOS / Linux equivalents
+grep -r "console.log" src/ --include="*.js" --include="*.jsx"
+grep -r "#[0-9a-fA-F]\{3,6\}" src/ --include="*.jsx" --include="*.tsx"
+npm run test -- --run
+npm run lint
 git diff --staged --stat
 ```

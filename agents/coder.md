@@ -351,13 +351,191 @@ export default ProductList
  * @exports useInventory (named)
  */
 
-import { useState, useMemo, useCallback, useEffect, useRef } from 'react'
+// ── OPTION A: With React Query (recommended for server state) ─
+// Use this when data needs caching, background refetch, deduplication
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { calcStockStatus, calcInventoryValue } from '@/utils/calculators'
 import { filterByQuery, sortArray, paginate } from '@/utils/arrayHelpers'
 import { productService } from '@/services/product.service'
 import { useToast } from '@/hooks/useToast'
 import { PAGINATION } from '@/config/constants'
 import { ProductStatus } from '@/types/product.types'
+import { useState, useMemo, useCallback } from 'react'
+
+export function useInventory(options = {}) {
+  const {
+    pageSize = PAGINATION.DEFAULT_PAGE_SIZE,
+    defaultSort = 'updatedAt',
+  } = options
+
+  const { addToast } = useToast()
+  const queryClient = useQueryClient()
+
+  // ── 1. UI state (non-server) ──────────────────────────────────
+  const [query, setQuery] = useState('')
+  const [sortKey, setSortKey] = useState(defaultSort)
+  const [sortDir, setSortDir] = useState('desc')
+  const [currentPage, setCurrentPage] = useState(1)
+
+  // ── 2. Server state via React Query ──────────────────────────
+  const {
+    data: allProducts = [],
+    isLoading,
+    error: queryError,
+    refetch,
+  } = useQuery({
+    queryKey: ['products'],
+    queryFn: () => productService.fetchAll(),
+    staleTime: 5 * 60 * 1000,   // 5 minutes
+    gcTime:    10 * 60 * 1000,  // 10 minutes
+  })
+
+  const error = queryError?.message ?? null
+
+  // ── 3. Derived state — ALL useMemo ────────────────────────────
+  const filtered = useMemo(() => {
+    const searched = filterByQuery(allProducts, query, ['name', 'sku', 'category'])
+    return sortArray(searched, sortKey, sortDir)
+  }, [allProducts, query, sortKey, sortDir])
+
+  const paginated = useMemo(
+    () => paginate(filtered, currentPage, pageSize),
+    [filtered, currentPage, pageSize]
+  )
+
+  const metrics = useMemo(() => ({
+    total:       allProducts.length,
+    active:      allProducts.filter(p => p.status === ProductStatus.ACTIVE).length,
+    lowStock:    allProducts.filter(p => calcStockStatus(p.stock, p.reorderPoint) === 'low_stock').length,
+    outOfStock:  allProducts.filter(p => p.stock === 0).length,
+    totalValue:  calcInventoryValue(allProducts),
+  }), [allProducts])
+
+  const isEmpty = useMemo(
+    () => !isLoading && !error && allProducts.length === 0,
+    [isLoading, error, allProducts.length]
+  )
+
+  const isFilteredEmpty = useMemo(
+    () => !isLoading && !error && allProducts.length > 0 && filtered.length === 0,
+    [isLoading, error, allProducts.length, filtered.length]
+  )
+
+  // ── 4. Mutations with optimistic updates ─────────────────────
+  const createMutation = useMutation({
+    mutationFn: (payload) => productService.create(payload),
+    onMutate: async (payload) => {
+      await queryClient.cancelQueries({ queryKey: ['products'] })
+      const previous = queryClient.getQueryData(['products'])
+      const tempId = `temp-${Date.now()}`
+      queryClient.setQueryData(['products'], old =>
+        [{ ...payload, id: tempId, createdAt: new Date().toISOString() }, ...(old ?? [])]
+      )
+      return { previous, tempId }
+    },
+    onSuccess: (data, _vars, context) => {
+      queryClient.setQueryData(['products'], old =>
+        (old ?? []).map(p => p.id === context.tempId ? data : p)
+      )
+      addToast(`"${data.name}" added to inventory`, 'success')
+    },
+    onError: (_err, _vars, context) => {
+      queryClient.setQueryData(['products'], context?.previous)
+      addToast('Failed to create product. Please try again.', 'error')
+    },
+  })
+
+  const updateMutation = useMutation({
+    mutationFn: ({ id, payload }) => productService.update(id, payload),
+    onMutate: async ({ id, payload }) => {
+      await queryClient.cancelQueries({ queryKey: ['products'] })
+      const previous = queryClient.getQueryData(['products'])
+      queryClient.setQueryData(['products'], old =>
+        (old ?? []).map(p => p.id === id ? { ...p, ...payload } : p)
+      )
+      return { previous }
+    },
+    onSuccess: (data) => {
+      queryClient.setQueryData(['products'], old =>
+        (old ?? []).map(p => p.id === data.id ? data : p)
+      )
+      addToast(`"${data.name}" updated`, 'success')
+    },
+    onError: (_err, _vars, context) => {
+      queryClient.setQueryData(['products'], context?.previous)
+      addToast('Failed to update product. Please try again.', 'error')
+    },
+  })
+
+  const deleteMutation = useMutation({
+    mutationFn: (id) => productService.delete(id),
+    onMutate: async (id) => {
+      await queryClient.cancelQueries({ queryKey: ['products'] })
+      const previous = queryClient.getQueryData(['products'])
+      const product = previous?.find(p => p.id === id)
+      queryClient.setQueryData(['products'], old =>
+        (old ?? []).filter(p => p.id !== id)
+      )
+      return { previous, product }
+    },
+    onSuccess: (_data, _id, context) => {
+      addToast(`"${context.product?.name}" deleted`, 'success')
+    },
+    onError: (_err, _id, context) => {
+      queryClient.setQueryData(['products'], context?.previous)
+      addToast('Failed to delete product. Please try again.', 'error')
+    },
+  })
+
+  // ── 5. UI handlers ────────────────────────────────────────────
+  const handleSearch = useCallback((value) => {
+    setQuery(value)
+    setCurrentPage(1)
+  }, [])
+
+  const handleSort = useCallback((key) => {
+    setSortDir(prev => sortKey === key ? (prev === 'asc' ? 'desc' : 'asc') : 'desc')
+    setSortKey(key)
+    setCurrentPage(1)
+  }, [sortKey])
+
+  const handlePageChange = useCallback((page) => {
+    setCurrentPage(page)
+  }, [])
+
+  // ── 6. Return plain object ────────────────────────────────────
+  return {
+    products: paginated.items,
+    allProducts,
+    metrics,
+    isLoading,
+    error,
+    isEmpty,
+    isFilteredEmpty,
+    query,
+    sortKey,
+    sortDir,
+    pagination: {
+      currentPage,
+      totalPages: paginated.totalPages,
+      totalItems: filtered.length,
+      pageSize,
+    },
+    createProduct:  (payload) => createMutation.mutateAsync(payload),
+    updateProduct:  (id, payload) => updateMutation.mutateAsync({ id, payload }),
+    deleteProduct:  (id) => deleteMutation.mutateAsync(id),
+    isCreating:     createMutation.isPending,
+    isUpdating:     updateMutation.isPending,
+    isDeleting:     deleteMutation.isPending,
+    refetch,
+    handleSearch,
+    handleSort,
+    handlePageChange,
+  }
+}
+```
+
+> **Note:** If React Query is not in the project stack, use the manual `useState + useEffect + AbortController` pattern from `templates/feature-module.template/hooks/use[Module].js`. Both patterns are valid — React Query is preferred for production apps with real APIs.
 
 /**
  * Manages the complete inventory product state including CRUD, filtering,

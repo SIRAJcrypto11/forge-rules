@@ -1,6 +1,6 @@
 # FORGE AGENT SYSTEM
 ## The Complete AI Engineering Team
-**Version: 2.0.0 | Built on Forge Rules v2.0**
+**version: 2.2.0 | Built on Forge Rules v2.0**
 
 > One developer with the right agents moves faster than a traditional team of five.
 > These agents don't just assist — they enforce standards, catch mistakes, and push output to its highest possible quality.
@@ -11,23 +11,19 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    FORGE AGENT SYSTEM                           │
+│                    FORGE AGENT SYSTEM v2.2.0                    │
 │                                                                 │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐       │
-│  │   CEO    │  │ARCHITECT │  │  CODER   │  │   UI     │       │
-│  │ Strategy │  │ Systems  │  │ Implement│  │ Visual   │       │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────┘       │
+│  🎯 CEO        🏗️ Architect   💻 Coder      🎨 UI              │
+│  Strategy      Systems        Implement     Visual             │
 │                                                                 │
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐       │
-│  │   UX     │  │REVIEWER  │  │ SECURITY │  │  TESTER  │       │
-│  │ Experience│  │  Quality │  │  Safety  │  │ Coverage │       │
-│  └──────────┘  └──────────┘  └──────────┘  └──────────┘       │
+│  🧭 UX         🔍 Reviewer    🔒 Security   🧪 Tester          │
+│  Experience    Quality        Safety        Coverage           │
 │                                                                 │
-│  ┌──────────┐  ┌──────────┐                                    │
-│  │PERFORMANCE│  │ BROWSER  │  ┌──────────┐                     │
-│  │  Speed   │  │ Research │  │   A11Y   │                     │
-│  └──────────┘  └──────────┘  │Accessible│                     │
-│                               └──────────┘                     │
+│  ⚡ Performance  ♿ A11y       🌐 Browser                       │
+│  Speed          Accessible    Research                         │
+│                                                                 │
+│  🖥️ Backend     🚀 DevOps                                       │
+│  API/DB         CI/CD/Deploy                                   │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -48,6 +44,8 @@
 | ⚡ Performance | `agents/performance.md` | For optimization work |
 | ♿ A11y | `agents/a11y.md` | For UI accessibility review |
 | 🌐 Browser | `agents/browser.md` | For research and competitor analysis |
+| 🖥️ Backend | `agents/backend.md` | For API design and backend code |
+| 🚀 DevOps | `agents/devops.md` | For CI/CD and deployment setup |
 
 ---
 
@@ -206,11 +204,18 @@ These agents are designed to be **model-agnostic and cost-efficient**:
 
 ---
 
-## FILE STRUCTURE
+## PR TEMPLATES — WHICH ONE TO USE
 
-```
-forge-rules/
-├── FORGE_AGENT_SYSTEM.md        ← You are here
+There are two PR template files in this repository:
+
+| File | Purpose |
+|------|---------|
+| `.github/PULL_REQUEST_TEMPLATE.md` | **Auto-loaded by GitHub** when you open a PR. Short version for quick use. |
+| `templates/PR-description.template.md` | **Full version** with complete Master Rules checklist. Copy-paste manually for thorough reviews. |
+
+**Rule:** Use `.github/PULL_REQUEST_TEMPLATE.md` for all PRs. Use `templates/PR-description.template.md` when you need the extended checklist (major features, security-sensitive changes).
+
+---
 │
 ├── agents/
 │   ├── ceo.md                   ← Product strategy

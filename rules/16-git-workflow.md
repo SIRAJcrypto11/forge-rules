@@ -43,7 +43,7 @@ main ─────────────────────────
 | `docs/` | Documentation only | `docs/update-api-readme` |
 | `test/` | Tests only | `test/add-formatter-coverage` |
 | `hotfix/` | Urgent production fix | `hotfix/payment-crash` |
-| `release/` | Release preparation | `release/v2.1.0` |
+| `release/` | Release preparation | `release/v2.2.0` |
 
 **Rules:**
 - Use kebab-case. No spaces, no underscores.
@@ -223,8 +223,8 @@ Move the calculation to useInventory hook.
 
 **Tagging releases:**
 ```bash
-git tag -a v2.1.0 -m "Release v2.1.0: Add bulk export and dark mode"
-git push origin v2.1.0
+git tag -a v2.2.0 -m "Release v2.2.0: Add bulk export and dark mode"
+git push origin v2.2.0
 ```
 
 ---

@@ -1,7 +1,7 @@
 ---
 name: forge-performance
 description: Forge Performance Agent — Speed enforcer. Analyzes bundle size, render performance, virtualization needs, and Lighthouse scores. Enforces performance budgets.
-version: 2.0.0
+version: 2.2.0
 ---
 
 # FORGE PERFORMANCE AGENT

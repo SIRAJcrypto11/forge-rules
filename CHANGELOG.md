@@ -5,6 +5,41 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.2.0] — May 2026
+
+### Fixed (Bugs)
+- `agents/coder.md` — Hook example now uses React Query (was using manual useState+useEffect, contradicting rules/09 which mandates React Query for server state)
+- `templates/component.template.jsx` — Fixed to 9 blocks (was incorrectly labeled Block 10 for default export)
+- `checklists/pre-commit.checklist.md` — Added PowerShell commands for Windows users (was Linux-only grep syntax)
+- All version numbers updated to v2.2.0 (SKILL.md files and FORGE_AGENT_SYSTEM.md were stale at v2.0.0)
+
+### Added — New Agents
+- `agents/backend.md` — Backend Engineer: API contract design, database schema, input validation (Zod), query optimization (N+1 prevention), auth/authorization, error handling
+- `agents/devops.md` — DevOps Engineer: CI/CD pipeline (GitHub Actions), environment strategy, secrets management, monitoring, rollback procedures
+
+### Added — New Rules
+- `rules/19-typescript.md` — TypeScript standards: tsconfig.json, type definitions, component props typing, hook return types, service typing, anti-patterns, migration guide
+
+### Added — New Templates
+- `templates/context.template.jsx` — React Context with split read/write pattern for optimal re-renders
+- `templates/test.template.js` — Three sections: Unit tests, Hook tests, Component tests (all 4 states)
+- `templates/feature-module.template/components/[Entity]List.jsx` — Complete list component template
+- `templates/feature-module.template/components/[Entity]Form.jsx` — Complete form component template
+
+### Added — New Kiro Skills
+- `kiro-skills/forge-backend/SKILL.md`
+- `kiro-skills/forge-devops/SKILL.md`
+
+### Added — New Folder
+- `docs/README.md` — Folder for storing agent output documents (Product Briefs, Review Reports, Audit Reports)
+
+### Changed
+- `FORGE_AGENT_SYSTEM.md` — Updated to v2.2.0, added Backend and DevOps agents, added PR template clarification
+- `README.md` — Complete rewrite: 13 agents, 19 rules, all fixes documented
+- `CHANGELOG.md` — v2.2.0 entry
+
+---
+
 ## [2.1.1] — May 2026
 
 ### Added — Missing Rules (Chapters 05-10)
@@ -41,7 +76,7 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `examples/03-agent-prompts-example.md` — Copy-paste prompts for all 11 agents
 
 ### Changed
-- `full-rules-single-file.md` — Updated to v2.1.0, added agent system reference and usage guide
+- `full-rules-single-file.md` — Updated to v2.2.0, added agent system reference and usage guide
 - `README.md` — Complete rewrite with all 18 rules, all 11 agents, all 5 checklists, examples
 
 ---

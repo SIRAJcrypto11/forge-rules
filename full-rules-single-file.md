@@ -1,7 +1,7 @@
 # Forge Rules v2.0
 ## Universal System Architecture & UI/UX Constitution
 **Standard: Silicon Valley Senior Engineer Level**
-**Author: Siraj Nur Ihrom | Version: 2.1.0 — May 2026**
+**Author: Siraj Nur Ihrom | Version: 2.2.0 — May 2026**
 **Applies to: ANY complex web application**
 **Repository: github.com/SIRAJcrypto11/forge-rules**
 

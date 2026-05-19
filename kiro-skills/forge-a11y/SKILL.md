@@ -1,7 +1,7 @@
 ---
 name: forge-a11y
 description: Forge A11y Agent — WCAG 2.1 AA accessibility enforcer. Audits keyboard navigation, screen reader support, color contrast, focus management, and motion sensitivity.
-version: 2.0.0
+version: 2.2.0
 ---
 
 # FORGE A11Y AGENT

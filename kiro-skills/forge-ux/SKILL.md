@@ -1,7 +1,7 @@
 ---
 name: forge-ux
 description: Forge UX Agent — User experience enforcer. Audits user flows, copy quality, form UX, navigation, empty states, and error messages. Makes every interaction intentional.
-version: 2.0.0
+version: 2.2.0
 ---
 
 # FORGE UX AGENT

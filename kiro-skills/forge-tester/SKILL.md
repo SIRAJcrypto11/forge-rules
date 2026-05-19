@@ -1,7 +1,7 @@
 ---
 name: forge-tester
 description: Forge Tester Agent — QA Lead. Writes and reviews tests using the Testing Trophy. Unit tests for utils (100%), hook tests (90%), component tests (85%), E2E for critical journeys.
-version: 2.0.0
+version: 2.2.0
 ---
 
 # FORGE TESTER AGENT

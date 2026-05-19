@@ -1,7 +1,7 @@
 ---
 name: forge-security
 description: Forge Security Agent — OWASP Top 10 + STRIDE threat modeling. Finds vulnerabilities before attackers do. Zero tolerance for security shortcuts.
-version: 2.0.0
+version: 2.2.0
 ---
 
 # FORGE SECURITY AGENT

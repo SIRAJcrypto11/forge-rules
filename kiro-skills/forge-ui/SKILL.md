@@ -1,7 +1,7 @@
 ---
 name: forge-ui
 description: Forge UI Agent — Visual system enforcer. Audits and builds UI that feels alive and polished. Detects AI slop. Enforces design tokens, animation specs, and component completeness.
-version: 2.0.0
+version: 2.2.0
 ---
 
 # FORGE UI AGENT
