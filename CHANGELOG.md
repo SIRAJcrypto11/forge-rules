@@ -5,6 +5,30 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.3.0] — May 2026
+
+### Added — New Agent
+- `agents/retro.md` — Retrospective Engineer: 6-phase retro protocol, 5-why root cause analysis, exactly 3 assigned action items, zombie action item rule, pattern analysis across 4 weeks
+
+### Added — New Rules
+- `rules/20-error-handling.md` — Complete error handling patterns: service layer (never throw), hook layer (translate + revert), component layer (display only), ErrorBoundary, form validation messages, global error handling, logging standards
+
+### Added — New Workflow
+- `workflows/onboarding.md` — Developer onboarding: Day 1 orientation (2 hours), Week 1 ramp-up, team lead checklist, new developer checklist, common first-week mistakes, quick reference card
+
+### Added — New Examples
+- `examples/04-review-report-example.md` — Real Reviewer Agent output for a CSV export PR (3 BLOCKING, 2 HIGH, 2 MEDIUM, 2 SUGGESTION, 2 PRAISE)
+- `examples/05-backend-design-example.md` — Real Backend Agent output for Inventra products API (contract, schema, validation, queries)
+
+### Added — New Kiro Skill
+- `kiro-skills/forge-retro/SKILL.md`
+
+### Changed
+- `full-rules-single-file.md` — Added Chapter 19 (TypeScript), Chapter 20 (Error Handling), Agent System Reference table
+- `README.md` — Added retro agent, new rules, new workflow, new examples, updated version to 2.3.0
+
+---
+
 ## [2.2.0] — May 2026
 
 ### Fixed (Bugs)

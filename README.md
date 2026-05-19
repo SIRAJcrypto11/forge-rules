@@ -51,7 +51,7 @@
 | 🌐 Browser | `agents/browser.md` | 5 research protocols, competitor + tech analysis |
 | 🖥️ Backend | `agents/backend.md` | API contracts, DB schema, validation, N+1 prevention ✨NEW |
 | 🚀 DevOps | `agents/devops.md` | CI/CD pipeline, secrets, monitoring, rollback ✨NEW |
-| 🔗 Handoff | `agents/handoff-protocol.md` | How agent outputs feed into next agent's inputs |
+| 🔁 Retro | `agents/retro.md` | Weekly retrospective, 5-why root cause, 3 action items ✨NEW |
 
 ### How to Activate Any Agent
 
@@ -115,13 +115,15 @@ forge-rules/
 │   ├── browser.md
 │   ├── backend.md               ← NEW: API design, DB schema, validation
 │   ├── devops.md                ← NEW: CI/CD, secrets, monitoring
+│   ├── retro.md                 ← NEW: Weekly retrospective, 5-why, 3 action items
 │   └── handoff-protocol.md
 │
 ├── workflows/
 │   ├── new-feature.md
 │   ├── code-review.md
 │   ├── ship.md
-│   └── debug.md
+│   ├── debug.md
+│   └── onboarding.md            ← NEW: New developer onboarding in 2 hours
 │
 ├── rules/                       ← 19 chapters (all complete)
 │   ├── 00-preamble.md
@@ -143,7 +145,8 @@ forge-rules/
 │   ├── 16-git-workflow.md
 │   ├── 17-ai-prompting-protocol.md
 │   ├── 18-forbidden-list.md
-│   └── 19-typescript.md         ← NEW: TypeScript standards
+│   ├── 19-typescript.md
+│   └── 20-error-handling.md     ← NEW: Service/hook/component error patterns
 │
 ├── kiro-skills/                 ← 13 Kiro-native skill files
 │   ├── forge-ceo/
@@ -157,8 +160,9 @@ forge-rules/
 │   ├── forge-performance/
 │   ├── forge-a11y/
 │   ├── forge-browser/
-│   ├── forge-backend/           ← NEW
-│   └── forge-devops/            ← NEW
+│   ├── forge-backend/
+│   ├── forge-devops/
+│   └── forge-retro/             ← NEW
 │
 ├── templates/
 │   ├── component.template.jsx   ← Fixed: 9 blocks (was 10)
@@ -187,7 +191,9 @@ forge-rules/
 ├── examples/
 │   ├── 01-product-brief-example.md
 │   ├── 02-architecture-example.md
-│   └── 03-agent-prompts-example.md
+│   ├── 03-agent-prompts-example.md
+│   ├── 04-review-report-example.md  ← NEW: Reviewer Agent output
+│   └── 05-backend-design-example.md ← NEW: Backend Agent output
 │
 ├── docs/                        ← NEW: Agent output documents folder
 │   └── README.md
@@ -236,23 +242,16 @@ Every AI response will follow Forge Rules automatically.
 
 ---
 
-## 🆕 What's New in v2.2
+## 🆕 What's New in v2.3
 
-| Fix/Addition | Description |
-|-------------|-------------|
-| **Bug Fix** | `agents/coder.md` hook example now uses React Query (was contradicting rules/09) |
-| **Bug Fix** | `templates/component.template.jsx` fixed to 9 blocks (was 10) |
-| **Bug Fix** | `checklists/pre-commit.checklist.md` now has PowerShell commands for Windows |
-| **Bug Fix** | All version numbers updated to v2.2.0 (were stale at v2.0.0) |
-| **New Agent** | `agents/backend.md` — API contracts, DB schema, validation, N+1 prevention |
-| **New Agent** | `agents/devops.md` — CI/CD pipeline, secrets management, monitoring, rollback |
-| **New Rule** | `rules/19-typescript.md` — TypeScript standards, tsconfig, type patterns |
-| **New Template** | `templates/context.template.jsx` — Context with split read/write pattern |
-| **New Template** | `templates/test.template.js` — Unit + Hook + Component test templates |
-| **New Templates** | `[Entity]List.jsx` and `[Entity]Form.jsx` in feature-module.template |
-| **New Folder** | `docs/` — For storing agent output documents |
-| **New Kiro Skills** | forge-backend, forge-devops |
-| **Clarification** | PR template usage explained (GitHub auto-load vs extended version) |
+| Addition | Description |
+|----------|-------------|
+| **New Agent** | `agents/retro.md` — Weekly retrospective: 5-why root cause, exactly 3 action items |
+| **New Rule** | `rules/20-error-handling.md` — Service/hook/component error patterns, ErrorBoundary, translation |
+| **New Workflow** | `workflows/onboarding.md` — Get new developer productive in 2 hours |
+| **New Examples** | Review report example (04), Backend design example (05) |
+| **New Kiro Skill** | forge-retro |
+| **Updated** | `full-rules-single-file.md` — Chapters 19 & 20 added, Agent System Reference table |
 
 ---
 
@@ -273,4 +272,4 @@ MIT — Use freely, adapt to your team, keep the attribution.
 
 **Author:** Siraj Nur Ihrom  
 **GitHub:** [@SIRAJcrypto11](https://github.com/SIRAJcrypto11)  
-**Version:** 2.2.0 — May 2026
+**Version:** 2.3.0 — May 2026

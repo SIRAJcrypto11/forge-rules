@@ -617,5 +617,162 @@ For each violation: state file + line + rule violated + corrected code.
 
 ---
 
+## CHAPTER 19 — TYPESCRIPT STANDARDS
+
+**Use TypeScript when:** Team > 1, project lifetime > 3 months, public API, complex data transformations.
+
+**tsconfig.json (required settings):**
+- `strict: true` — always, no exceptions
+- `noUncheckedIndexedAccess: true` — array[0] is T | undefined
+- `noImplicitReturns: true` — every code path must return
+- `exactOptionalPropertyTypes: true` — optional means optional
+
+**Type definitions (Layer 2):**
+```typescript
+// Use const objects + typeof for string unions (not enum)
+export const ProductStatus = { ACTIVE: 'active', INACTIVE: 'inactive' } as const
+export type ProductStatus = typeof ProductStatus[keyof typeof ProductStatus]
+
+// Use Omit/Pick/Partial for derived types
+export type CreateProductPayload = Omit<Product, 'id' | 'createdAt' | 'updatedAt'>
+export type UpdateProductPayload = Partial<Omit<Product, 'id' | 'createdAt'>>
+```
+
+**Component props:**
+```typescript
+interface ProductListProps {
+  products:   Product[]
+  onEdit:     (product: Product) => void
+  isLoading?: boolean
+  error?:     string | null
+  className?: string
+}
+```
+
+**Hook return types:**
+```typescript
+interface UseInventoryReturn {
+  products:      Product[]
+  isLoading:     boolean
+  error:         string | null
+  createProduct: (payload: CreateProductPayload) => Promise<{ success: boolean }>
+  handleSearch:  (query: string) => void
+}
+export function useInventory(): UseInventoryReturn { }
+```
+
+**TypeScript forbidden patterns:**
+- `any` — use `unknown` and narrow
+- Non-null assertion `!` without certainty
+- `@ts-ignore` without explanation comment
+- `object` type — use specific interface or `Record<string, unknown>`
+- `Function` type — use specific signature
+
+---
+
+## CHAPTER 20 — ERROR HANDLING PATTERNS
+
+**Three error categories:**
+1. Expected (network, validation, not found) → handle gracefully, user sees helpful message
+2. Unexpected (null pointer, logic bugs) → catch and recover, user sees generic message
+3. Fatal (corrupted state) → crash and restart, alert on-call
+
+**Service layer — NEVER throw, always return `{ data, error }`:**
+```javascript
+async function fetchProducts() {
+  try {
+    const response = await fetch('/api/products')
+    if (!response.ok) {
+      return { data: null, error: `HTTP ${response.status}`, status: response.status }
+    }
+    const body = await response.json()
+    return { data: body.data, error: null, status: response.status }
+  } catch (err) {
+    if (err.name === 'AbortError') return { data: null, error: 'Request timed out', status: null }
+    return { data: null, error: 'Connection failed. Please try again.', status: null }
+  }
+}
+```
+
+**Error translation (hook layer):**
+```javascript
+const STATUS_MESSAGES = {
+  401: 'Your session has expired. Please log in again.',
+  403: "You don't have permission to do this.",
+  404: 'This item no longer exists.',
+  409: 'This item already exists.',
+  429: 'Too many requests. Please wait and try again.',
+  500: 'Server error. Our team has been notified.',
+}
+function translateError(error, status) {
+  return STATUS_MESSAGES[status] ?? error ?? 'Something went wrong. Please try again.'
+}
+```
+
+**Error Boundary (catches unexpected render errors):**
+```jsx
+class ErrorBoundary extends Component {
+  state = { hasError: false }
+  static getDerivedStateFromError() { return { hasError: true } }
+  componentDidCatch(error, info) { console.error('[ErrorBoundary]', error, info) }
+  render() {
+    if (this.state.hasError) return <ErrorFallback onRetry={() => window.location.reload()} />
+    return this.props.children
+  }
+}
+// Wrap each feature: <ErrorBoundary><InventoryPage /></ErrorBoundary>
+```
+
+**Validation error messages — specific and actionable:**
+```javascript
+// ✓ "Email must include an @ symbol"
+// ✓ "Password must be at least 8 characters"
+// ✓ "Price must be a whole number (no decimals)"
+// ✗ "Invalid input"
+// ✗ "Validation failed"
+// ✗ "Required"
+```
+
+**Error handling checklist:**
+- Services return `{ data, error }` — never throw
+- All API errors translated to user-friendly messages
+- Optimistic updates have revert logic on error
+- Form validation errors are inline and specific
+- ErrorBoundary wraps each feature module
+- Global `unhandledrejection` handler configured
+- Sensitive data redacted from logs
+- No stack traces exposed to users
+
+---
+
+## AGENT SYSTEM REFERENCE
+
+This rulebook works with the Forge Agent System (13 specialized agents):
+
+| Agent | When to Use |
+|-------|-------------|
+| CEO | Before any feature — product strategy, Product Brief |
+| Architect | Before any code — system design, ARCHITECTURE.md |
+| Coder | Implementation — one file at a time, 9-block anatomy |
+| UI | Visual quality — anti-slop, design tokens, component specs |
+| UX | User experience — copy quality, form UX, empty states |
+| Reviewer | Code review — BLOCKING/HIGH/MEDIUM/LOW format |
+| Security | Security audit — OWASP Top 10 + STRIDE |
+| Tester | Test coverage — unit/hook/component/E2E |
+| Performance | Speed — bundle analysis, Lighthouse budgets |
+| A11y | Accessibility — WCAG 2.1 AA |
+| Browser | Research — competitor analysis, tech research |
+| Backend | API design — contracts, DB schema, validation |
+| DevOps | Deployment — CI/CD, secrets, monitoring |
+| Retro | Retrospective — weekly review, 3 action items |
+
+**Activation:** "Act as Forge [Agent] Agent. [Your request]"  
+**Full agents:** `agents/` folder in the repository  
+**Handoff chain:** `agents/handoff-protocol.md`  
+**Copy-paste prompts:** `examples/03-agent-prompts-example.md`
+
+---
+
 *"Structure is freedom. Chaos is the real constraint."*
-*Forge Rules v2.0 — Apply to every project, every time.*
+*Forge Rules v2.2.0 — Apply to every project, every time.*
+*Repository: github.com/SIRAJcrypto11/forge-rules*
