@@ -167,7 +167,7 @@ How was this tested?
 
 ## Checklist
 
-- [ ] Follows Master Rules architecture
+- [ ] Follows Forge Rules architecture
 - [ ] No console.log statements
 - [ ] No hardcoded values (all in config/)
 - [ ] Loading, empty, and error states handled

@@ -1,5 +1,5 @@
 /**
- * COMPONENT TEMPLATE — Master Rules v2.0
+ * COMPONENT TEMPLATE — Forge Rules v2.0
  * Copy this file, rename it, and fill in the blanks.
  * Delete all comments marked [TEMPLATE] after filling in.
  *

@@ -35,7 +35,7 @@ How was this tested?
 |--------|-------|
 | | |
 
-## Master Rules Checklist
+## Forge Rules Checklist
 
 - [ ] Follows 8-layer architecture (no cross-layer violations)
 - [ ] No cross-feature imports

@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to Master Rules are documented here.
+All notable changes to Forge Rules are documented here.
 Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---

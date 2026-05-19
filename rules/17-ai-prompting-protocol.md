@@ -119,7 +119,7 @@ After each file, confirm: "File complete. Ready for next?"
 ### Template D — Review & Validate
 
 ```
-Review the files built in Phase [N] against Master Rules v2.0.
+Review the files built in Phase [N] against Forge Rules v2.0.
 
 Files to review:
   - [list files]

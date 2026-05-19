@@ -1,4 +1,4 @@
-# MASTER RULES v2.0
+# Forge Rules v2.0
 ## Universal System Architecture & UI/UX Constitution
 **Standard: Silicon Valley Senior Engineer Level**
 **Author: Siraj Nur Ihrom | Version: 2.0.0 — May 2026**
@@ -570,7 +570,7 @@ Mobile: yes | Dark mode: yes | Accessibility: yes
 
 **After each Phase, validate:**
 ```
-Review files built in Phase [N] against Master Rules v2.0.
+Review files built in Phase [N] against Forge Rules v2.0.
 Check: Iron Law violations, layer boundary violations, business logic in components,
 missing states, hardcoded values, line limit violations, missing aria attributes.
 For each violation: state file + line + rule violated + corrected code.
@@ -599,4 +599,4 @@ For each violation: state file + line + rule violated + corrected code.
 ---
 
 *"Structure is freedom. Chaos is the real constraint."*
-*Master Rules v2.0 — Apply to every project, every time.*
+*Forge Rules v2.0 — Apply to every project, every time.*

@@ -1,4 +1,4 @@
-# 🏛️ Master Rules v2.0
+# 🔥 Forge Rules v2.0
 ### Universal System Architecture & UI/UX Constitution
 **Standard: Silicon Valley Senior Engineer Level**
 
@@ -20,7 +20,7 @@ These rules are designed to be:
 ## 📁 Repository Structure
 
 ```
-master-rules/
+forge-rules/
 ├── README.md                        ← You are here
 ├── CHANGELOG.md                     ← Version history
 │

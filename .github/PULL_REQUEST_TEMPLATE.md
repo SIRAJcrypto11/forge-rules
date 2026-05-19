@@ -26,7 +26,7 @@ Closes #<!-- issue number -->
 |--------|-------|
 | | |
 
-## Master Rules Checklist
+## Forge Rules Checklist
 
 - [ ] No cross-feature imports
 - [ ] No business logic in components

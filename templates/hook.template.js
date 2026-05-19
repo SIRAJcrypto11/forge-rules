@@ -1,5 +1,5 @@
 /**
- * HOOK TEMPLATE — Master Rules v2.0
+ * HOOK TEMPLATE — Forge Rules v2.0
  * Copy this file, rename it, and fill in the blanks.
  * Delete all comments marked [TEMPLATE] after filling in.
  *

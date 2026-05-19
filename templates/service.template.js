@@ -1,5 +1,5 @@
 /**
- * SERVICE TEMPLATE — Master Rules v2.0
+ * SERVICE TEMPLATE — Forge Rules v2.0
  * Copy this file, rename it, and fill in the blanks.
  *
  * File: src/services/[domain].service.js
