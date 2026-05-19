@@ -1,0 +1,238 @@
+# FORGE AGENT SYSTEM
+## The Complete AI Engineering Team
+**Version: 2.0.0 | Built on Forge Rules v2.0**
+
+> One developer with the right agents moves faster than a traditional team of five.
+> These agents don't just assist — they enforce standards, catch mistakes, and push output to its highest possible quality.
+
+---
+
+## THE TEAM
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                    FORGE AGENT SYSTEM                           │
+│                                                                 │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐       │
+│  │   CEO    │  │ARCHITECT │  │  CODER   │  │   UI     │       │
+│  │ Strategy │  │ Systems  │  │ Implement│  │ Visual   │       │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘       │
+│                                                                 │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐       │
+│  │   UX     │  │REVIEWER  │  │ SECURITY │  │  TESTER  │       │
+│  │ Experience│  │  Quality │  │  Safety  │  │ Coverage │       │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘       │
+│                                                                 │
+│  ┌──────────┐  ┌──────────┐                                    │
+│  │PERFORMANCE│  │ BROWSER  │  ┌──────────┐                     │
+│  │  Speed   │  │ Research │  │   A11Y   │                     │
+│  └──────────┘  └──────────┘  │Accessible│                     │
+│                               └──────────┘                     │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+## QUICK REFERENCE
+
+| Agent | File | When to Use |
+|-------|------|-------------|
+| 🎯 CEO | `agents/ceo.md` | Before any feature is designed |
+| 🏗️ Architect | `agents/architect.md` | Before any code is written |
+| 💻 Coder | `agents/coder.md` | When implementing any file |
+| 🎨 UI | `agents/ui.md` | When building UI components |
+| 🧭 UX | `agents/ux.md` | When designing user flows |
+| 🔍 Reviewer | `agents/reviewer.md` | Before any PR merges |
+| 🔒 Security | `agents/security.md` | For auth/data/API changes |
+| 🧪 Tester | `agents/tester.md` | When writing or reviewing tests |
+| ⚡ Performance | `agents/performance.md` | For optimization work |
+| ♿ A11y | `agents/a11y.md` | For UI accessibility review |
+| 🌐 Browser | `agents/browser.md` | For research and competitor analysis |
+
+---
+
+## HOW TO ACTIVATE ANY AGENT
+
+### Method 1 — Paste as System Instruction (Recommended)
+Copy the entire content of the agent file and paste it as your AI's system instruction or custom instructions. The agent will be active for the entire conversation.
+
+### Method 2 — Inline Activation
+At the start of any message, say:
+```
+"Act as Forge [Agent Name] Agent. [Your request]"
+```
+
+### Method 3 — Kiro Skills
+If using Kiro, place agent files in `.kiro/skills/forge-[agent-name]/SKILL.md`
+
+---
+
+## THE SPRINT WORKFLOW
+
+Every feature follows this sequence:
+
+```
+1. THINK    → CEO Agent         → Product Brief
+2. PLAN     → Architect Agent   → ARCHITECTURE.md
+3. BUILD    → Coder Agent       → Working code
+4. REVIEW   → Reviewer Agent    → Review report
+5. TEST     → Tester Agent      → Test suite
+6. SHIP     → Git workflow      → Merged PR
+```
+
+See `workflows/new-feature.md` for the complete workflow.
+
+---
+
+## AGENT INTERACTION RULES
+
+### Rule 1 — Sequential, Not Parallel
+Agents work in sequence. CEO before Architect. Architect before Coder. Never skip.
+
+### Rule 2 — Output Feeds Input
+Each agent's output is the next agent's input:
+- CEO produces Product Brief → Architect reads it
+- Architect produces ARCHITECTURE.md → Coder reads it
+- Coder produces code → Reviewer reads it
+- Reviewer produces report → Tester reads it
+
+### Rule 3 — One File Per Coder Session
+The Coder Agent builds ONE file per prompt. Never ask for multiple files at once.
+
+### Rule 4 — Gates Are Real
+Each workflow step has a gate. If the gate fails, fix it before proceeding. No exceptions.
+
+### Rule 5 — Agents Challenge, Not Agree
+Every agent is designed to push back, challenge assumptions, and find problems. If an agent is just agreeing with everything you say, you're not using it correctly.
+
+---
+
+## ANTI-SLOP ENFORCEMENT
+
+These agents are specifically designed to prevent AI slop — the generic, mediocre output that AI produces when given no constraints.
+
+**What causes AI slop:**
+- Vague prompts ("build me a dashboard")
+- No architectural constraints
+- No quality standards
+- No review process
+- No testing requirements
+
+**How Forge Agents prevent it:**
+- CEO forces specificity before any code is written
+- Architect enforces the 8-layer structure
+- Coder enforces the 9-block component anatomy
+- UI enforces the design token system
+- UX enforces specific copy standards
+- Reviewer catches every violation
+- Security catches every vulnerability
+- Tester proves the code works
+- Performance proves it's fast
+- A11y proves it's accessible
+
+**The result:** Code that looks like it was written by a senior engineer, not generated by an AI.
+
+---
+
+## COST OPTIMIZATION
+
+These agents are designed to be **model-agnostic and cost-efficient**:
+
+| Approach | Cost | Quality |
+|----------|------|---------|
+| One massive prompt to GPT-4 | High | Medium (AI slop) |
+| Forge Agent System | Low-Medium | High (enforced quality) |
+
+**Why lower cost:**
+- Each agent has a focused, specific job → shorter context → cheaper
+- Structured output → less back-and-forth → fewer tokens
+- Rules prevent mistakes → less rework → fewer total tokens
+- One file per prompt → predictable, bounded cost
+
+**Recommended model routing:**
+- CEO, Architect, Reviewer: Use best available model (complex reasoning)
+- Coder, UI, UX: Use mid-tier model (structured output, clear rules)
+- Tester, Security, A11y: Use mid-tier model (checklist-based)
+- Browser/Research: Use model with web access
+
+---
+
+## FORGE AGENT SYSTEM vs GSTACK
+
+| | gstack | Forge Agent System |
+|---|--------|-------------------|
+| Platform | Claude Code + 10 agents | Any AI (Kiro, Claude, GPT, Gemini) |
+| Format | TypeScript + Markdown | Pure Markdown |
+| Install | git clone + ./setup | Copy-paste |
+| Dependencies | Bun, Node.js, Playwright | None |
+| Browser | Real Chromium browser | Research prompts |
+| Focus | General software factory | Web app architecture specialist |
+| Rules | Workflow-focused | Architecture + quality enforced |
+| Cost | Free (but needs Claude Code) | Works with any model |
+
+**Use gstack if:** You use Claude Code and want real browser automation.
+**Use Forge Agents if:** You want architecture enforcement on any AI, any platform.
+
+---
+
+## GETTING STARTED
+
+### For a new project:
+```
+1. Read: checklists/new-project.checklist.md
+2. Activate: CEO Agent → describe your idea
+3. Activate: Architect Agent → paste the Product Brief
+4. Follow: workflows/new-feature.md
+```
+
+### For an existing project:
+```
+1. Activate: Architect Agent → "Audit this codebase against Forge Rules v2.0"
+2. Activate: Reviewer Agent → "Review [specific file] against Forge Rules v2.0"
+3. Fix violations in priority order: BLOCKING → HIGH → MEDIUM → LOW
+```
+
+### For a code review:
+```
+1. Follow: workflows/code-review.md
+2. Activate agents in sequence based on PR type
+```
+
+### For debugging:
+```
+1. Follow: workflows/debug.md
+2. Use the Debug Prompt Template
+```
+
+---
+
+## FILE STRUCTURE
+
+```
+forge-rules/
+├── FORGE_AGENT_SYSTEM.md        ← You are here
+│
+├── agents/
+│   ├── ceo.md                   ← Product strategy
+│   ├── architect.md             ← System design
+│   ├── coder.md                 ← Implementation
+│   ├── ui.md                    ← Visual system
+│   ├── ux.md                    ← User experience
+│   ├── reviewer.md              ← Code quality
+│   ├── security.md              ← Security audit
+│   ├── tester.md                ← Test coverage
+│   ├── performance.md           ← Speed optimization
+│   ├── a11y.md                  ← Accessibility
+│   └── browser.md               ← Research
+│
+├── workflows/
+│   ├── new-feature.md           ← Full sprint workflow
+│   ├── code-review.md           ← Review pipeline
+│   ├── ship.md                  ← Deployment workflow
+│   └── debug.md                 ← Debug protocol
+│
+├── rules/                       ← Forge Rules v2.0 (18 chapters)
+├── templates/                   ← Code templates
+├── checklists/                  ← Project checklists
+└── full-rules-single-file.md    ← All rules for AI paste
+```

@@ -5,6 +5,39 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.1.0] — May 2026
+
+### Added — Agent System
+- `agents/ceo.md` — CEO Agent: 5-phase product strategy protocol, 10-section review, Product Brief output
+- `agents/architect.md` — Architect Agent: 8-phase system design, ADRs, risk register, build sequence
+- `agents/coder.md` — Coder Agent: Pre-coding protocol, 9-block anatomy enforcement, full code examples
+- `agents/ui.md` — UI Agent: 6-audit visual system, anti-slop detection, complete component specs
+- `agents/ux.md` — UX Agent: 6-audit UX protocol, 8 copy tests, form/nav/mobile audits, patterns library
+- `agents/reviewer.md` — Reviewer Agent: 6-phase review, comment format, verdict system
+- `agents/security.md` — Security Agent: OWASP Top 10 + STRIDE, client-side checklist, dependency protocol
+- `agents/tester.md` — Tester Agent: Unit/hook/component/E2E templates, coverage requirements
+- `agents/performance.md` — Performance Agent: Bundle analysis, render audit, virtualization, Lighthouse
+- `agents/a11y.md` — A11y Agent: WCAG 2.1 AA, keyboard nav, screen reader, contrast, motion
+- `agents/browser.md` — Browser Agent: 5 research protocols, competitor analysis, tech research
+
+### Added — Workflows
+- `workflows/new-feature.md` — Full sprint: Think→Plan→Build→Review→Test→Ship
+- `workflows/code-review.md` — Multi-agent review pipeline
+- `workflows/ship.md` — Pre-ship checklist, deploy sequence, rollback procedure
+- `workflows/debug.md` — 5-phase root-cause debug protocol, common bug patterns
+
+### Added — Kiro Skills
+- `kiro-skills/forge-ceo/SKILL.md`
+- `kiro-skills/forge-architect/SKILL.md`
+- `kiro-skills/forge-coder/SKILL.md`
+- `kiro-skills/forge-reviewer/SKILL.md`
+- `kiro-skills/forge-security/SKILL.md`
+
+### Added — Documentation
+- `FORGE_AGENT_SYSTEM.md` — Complete agent system overview and quick reference
+
+---
+
 ## [2.0.0] — May 2026
 
 ### Added
