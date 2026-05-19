@@ -114,6 +114,8 @@ This is a living document. To propose changes:
 2. Reference the specific chapter and rule number
 3. Provide a concrete example of the violation and the fix
 
+**Repository:** [github.com/SIRAJcrypto11/forge-rules](https://github.com/SIRAJcrypto11/forge-rules)
+
 ---
 
 ## 📄 License
@@ -121,4 +123,5 @@ This is a living document. To propose changes:
 MIT — Use freely, adapt to your team, keep the attribution.
 
 **Author:** Siraj Nur Ihrom  
+**GitHub:** [@SIRAJcrypto11](https://github.com/SIRAJcrypto11)  
 **Version:** 2.0.0 — May 2026
