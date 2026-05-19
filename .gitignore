@@ -1,0 +1,14 @@
+# This repo's own gitignore
+# (For project gitignore template, see rules/16-git-workflow.md)
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+
+# Logs
+*.log

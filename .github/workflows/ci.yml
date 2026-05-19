@@ -1,0 +1,55 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  quality:
+    name: Lint, Test & Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type check (if TypeScript)
+        run: npm run typecheck --if-present
+
+      - name: Run tests with coverage
+        run: npm run test:coverage
+
+      - name: Upload coverage report
+        uses: codecov/codecov-action@v4
+        with:
+          fail_ci_if_error: false
+
+      - name: Security audit
+        run: npm audit --audit-level=high
+
+      - name: Build
+        run: npm run build
+
+      - name: Check bundle size
+        run: |
+          # Fail if main bundle > 150KB gzipped
+          BUNDLE_SIZE=$(find dist/assets -name "*.js" | head -1 | xargs gzip -c | wc -c)
+          echo "Bundle size: $BUNDLE_SIZE bytes gzipped"
+          if [ $BUNDLE_SIZE -gt 153600 ]; then
+            echo "Bundle size exceeds 150KB limit"
+            exit 1
+          fi
