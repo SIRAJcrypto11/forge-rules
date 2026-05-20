@@ -1,4 +1,4 @@
-# 🔥 Forge Rules v2.2
+# 🔥 Forge Rules v2.4
 ### Universal System Architecture & UI/UX Constitution + AI Agent System
 **Standard: Silicon Valley Senior Engineer Level**
 
@@ -10,29 +10,29 @@
 
 **Forge Rules** is two things in one:
 
-1. **An engineering rulebook** — 19 chapters covering architecture, UI/UX, animation, performance, design system, testing, security, accessibility, Git workflow, and TypeScript for any web application.
+1. **An engineering rulebook** — 25 chapters covering every aspect of building production-grade web applications: architecture, UI/UX, animation, performance, design system, testing, security, accessibility, TypeScript, error handling, mobile, i18n, API design, monitoring, and data visualization.
 
-2. **An AI agent system** — 13 specialized agents that enforce these rules and push any AI model to its highest output quality. Zero AI slop. Every output is production-grade.
+2. **An AI agent system** — 16 specialized agents that enforce these rules and push any AI model to its highest output quality. Zero AI slop. Every output is production-grade.
 
 ---
 
-## 🤖 The Agent System (13 Agents)
+## 🤖 The Agent System (16 Agents)
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                    FORGE AGENT SYSTEM v2.2                      │
+│                    FORGE AGENT SYSTEM v2.4                      │
 │                                                                 │
-│  🎯 CEO        🏗️ Architect   💻 Coder      🎨 UI              │
-│  Strategy      Systems        Implement     Visual             │
+│  🎯 CEO        🏗️ Architect   📋 Planner    💻 Coder           │
+│  Strategy      Systems        Sprint Plan   Implement          │
 │                                                                 │
-│  🧭 UX         🔍 Reviewer    🔒 Security   🧪 Tester          │
-│  Experience    Quality        Safety        Coverage           │
+│  🎨 UI         🧭 UX          🔍 Reviewer   🔒 Security        │
+│  Visual        Experience     Quality       Safety             │
 │                                                                 │
-│  ⚡ Performance  ♿ A11y       🌐 Browser                       │
-│  Speed          Accessible    Research                         │
+│  🧪 Tester     🔬 QA Manual   ⚡ Performance  ♿ A11y           │
+│  Automated     Manual         Speed          Accessible        │
 │                                                                 │
-│  🖥️ Backend     🚀 DevOps     🔗 Handoff                       │
-│  API/DB         CI/CD         Protocol                         │
+│  🌐 Browser    🖥️ Backend     🚀 DevOps     🔁 Retro           │
+│  Research      API/DB         CI/CD         Retrospective      │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -40,18 +40,21 @@
 |-------|------|------|
 | 🎯 CEO | `agents/ceo.md` | 5-phase product strategy, 10-section review, Product Brief |
 | 🏗️ Architect | `agents/architect.md` | 8-phase system design, ADRs, risk register, build sequence |
+| 📋 Planner | `agents/planner.md` | Sprint planning, task estimates, dependency map ✨NEW |
 | 💻 Coder | `agents/coder.md` | Pre-coding protocol, 9-block anatomy, React Query patterns |
 | 🎨 UI | `agents/ui.md` | 6-audit visual system, anti-slop detection, component specs |
 | 🧭 UX | `agents/ux.md` | 6-audit UX protocol, 8 copy tests, form/nav/mobile audits |
 | 🔍 Reviewer | `agents/reviewer.md` | 6-phase review, BLOCKING/HIGH/MEDIUM/LOW format |
 | 🔒 Security | `agents/security.md` | OWASP Top 10 + STRIDE threat modeling |
 | 🧪 Tester | `agents/tester.md` | Unit/hook/component/E2E templates, coverage requirements |
+| 🔬 QA Manual | `agents/qa-manual.md` | Manual QA: exploratory, cross-browser, mobile, a11y ✨NEW |
 | ⚡ Performance | `agents/performance.md` | Bundle analysis, render audit, Lighthouse budgets |
 | ♿ A11y | `agents/a11y.md` | WCAG 2.1 AA, keyboard nav, screen reader, contrast |
 | 🌐 Browser | `agents/browser.md` | 5 research protocols, competitor + tech analysis |
-| 🖥️ Backend | `agents/backend.md` | API contracts, DB schema, validation, N+1 prevention ✨NEW |
-| 🚀 DevOps | `agents/devops.md` | CI/CD pipeline, secrets, monitoring, rollback ✨NEW |
-| 🔁 Retro | `agents/retro.md` | Weekly retrospective, 5-why root cause, 3 action items ✨NEW |
+| 🖥️ Backend | `agents/backend.md` | API contracts, DB schema, validation, N+1 prevention |
+| 🚀 DevOps | `agents/devops.md` | CI/CD pipeline, secrets, monitoring, rollback |
+| 🔁 Retro | `agents/retro.md` | Weekly retrospective, 5-why root cause, 3 action items |
+| 🔗 Handoff | `agents/handoff-protocol.md` | How agent outputs feed into next agent's inputs |
 
 ### How to Activate Any Agent
 
@@ -61,34 +64,33 @@ Copy the agent file content → paste as AI system instruction → active for en
 **Method 2 — Inline:**
 ```
 "Act as Forge CEO Agent. I want to build [idea]."
-"Act as Forge Backend Agent. Design the API for [feature]."
-"Act as Forge DevOps Agent. Set up CI/CD for [project]."
+"Act as Forge Planner Agent. Plan the sprint for [project]."
+"Act as Forge QA Agent. Test [feature] at [staging URL]."
 ```
 
-**Method 3 — Kiro Skills (all 13 agents):**
+**Method 3 — Kiro Skills (all 16 agents):**
 ```bash
 cp -r kiro-skills/forge-* ~/.kiro/skills/
 ```
 
 ---
 
-## 🔄 The Sprint Workflow
+## 🔄 The Complete Sprint Workflow
 
 ```
-THINK → PLAN → BUILD → REVIEW → TEST → SHIP
+THINK → PLAN → BUILD → REVIEW → TEST → QA → SHIP
 
 1. CEO Agent       → Product Brief        (before any code)
 2. Architect Agent → ARCHITECTURE.md      (before any code)
-3. Coder Agent     → Frontend code        (one file at a time)
-4. Backend Agent   → API + DB code        (parallel with Coder)
-5. DevOps Agent    → CI/CD setup          (once per project)
-6. Reviewer Agent  → Review report        (before merge)
-7. Tester Agent    → Test suite           (before merge)
-8. Git workflow    → Merged PR
+3. Planner Agent   → Sprint task list     (before coding starts)
+4. Coder Agent     → Frontend code        (one file at a time)
+5. Backend Agent   → API + DB code        (parallel with Coder)
+6. DevOps Agent    → CI/CD setup          (once per project)
+7. Reviewer Agent  → Review report        (before merge)
+8. Tester Agent    → Automated tests      (before merge)
+9. QA Agent        → Manual QA report     (before release)
+10. Git workflow   → Merged PR → Deploy
 ```
-
-See `workflows/new-feature.md` for the complete sprint guide.  
-See `examples/03-agent-prompts-example.md` for copy-paste prompts.
 
 ---
 
@@ -98,24 +100,27 @@ See `examples/03-agent-prompts-example.md` for copy-paste prompts.
 forge-rules/
 ├── README.md
 ├── CHANGELOG.md
-├── FORGE_AGENT_SYSTEM.md        ← Agent system overview (13 agents)
-├── full-rules-single-file.md    ← ALL rules in one file (paste to AI)
+├── FORGE_AGENT_SYSTEM.md
+├── full-rules-single-file.md    ← ALL rules (paste to AI)
+├── lighthouserc.json            ← NEW: Lighthouse CI config
 │
-├── agents/                      ← 13 specialized AI agents
+├── agents/                      ← 16 specialized AI agents
 │   ├── ceo.md
 │   ├── architect.md
-│   ├── coder.md                 ← Fixed: React Query hook pattern
+│   ├── planner.md               ← NEW: Sprint planning
+│   ├── coder.md
 │   ├── ui.md
 │   ├── ux.md
 │   ├── reviewer.md
 │   ├── security.md
 │   ├── tester.md
+│   ├── qa-manual.md             ← NEW: Manual QA
 │   ├── performance.md
 │   ├── a11y.md
 │   ├── browser.md
-│   ├── backend.md               ← NEW: API design, DB schema, validation
-│   ├── devops.md                ← NEW: CI/CD, secrets, monitoring
-│   ├── retro.md                 ← NEW: Weekly retrospective, 5-why, 3 action items
+│   ├── backend.md
+│   ├── devops.md
+│   ├── retro.md
 │   └── handoff-protocol.md
 │
 ├── workflows/
@@ -123,9 +128,10 @@ forge-rules/
 │   ├── code-review.md
 │   ├── ship.md
 │   ├── debug.md
-│   └── onboarding.md            ← NEW: New developer onboarding in 2 hours
+│   ├── onboarding.md
+│   └── hotfix.md                ← NEW: Emergency production fix
 │
-├── rules/                       ← 19 chapters (all complete)
+├── rules/                       ← 25 chapters (all complete)
 │   ├── 00-preamble.md
 │   ├── 01-iron-laws.md
 │   ├── 02-project-anatomy.md
@@ -146,30 +152,40 @@ forge-rules/
 │   ├── 17-ai-prompting-protocol.md
 │   ├── 18-forbidden-list.md
 │   ├── 19-typescript.md
-│   └── 20-error-handling.md     ← NEW: Service/hook/component error patterns
+│   ├── 20-error-handling.md
+│   ├── 21-mobile-responsive.md  ← NEW
+│   ├── 22-internationalization.md ← NEW
+│   ├── 23-api-design-frontend.md  ← NEW
+│   ├── 24-monitoring-observability.md ← NEW
+│   └── 25-data-visualization.md   ← NEW
 │
-├── kiro-skills/                 ← 13 Kiro-native skill files
+├── kiro-skills/                 ← 16 Kiro-native skill files
 │   ├── forge-ceo/
 │   ├── forge-architect/
+│   ├── forge-planner/           ← NEW
 │   ├── forge-coder/
 │   ├── forge-reviewer/
 │   ├── forge-security/
 │   ├── forge-ui/
 │   ├── forge-ux/
 │   ├── forge-tester/
+│   ├── forge-qa/                ← NEW
 │   ├── forge-performance/
 │   ├── forge-a11y/
 │   ├── forge-browser/
 │   ├── forge-backend/
 │   ├── forge-devops/
-│   └── forge-retro/             ← NEW
+│   └── forge-retro/
 │
 ├── templates/
-│   ├── component.template.jsx   ← Fixed: 9 blocks (was 10)
+│   ├── component.template.jsx
 │   ├── hook.template.js
 │   ├── service.template.js
-│   ├── context.template.jsx     ← NEW: Context with split read/write
-│   ├── test.template.js         ← NEW: Unit + Hook + Component tests
+│   ├── context.template.jsx
+│   ├── test.template.js
+│   ├── vitest.config.template.js    ← NEW
+│   ├── playwright.config.template.ts ← NEW
+│   ├── test-setup.template.js       ← NEW
 │   ├── PR-description.template.md
 │   ├── ARCHITECTURE.template.md
 │   ├── CONVENTIONS.template.md
@@ -178,12 +194,12 @@ forge-rules/
 │       ├── [Module]Page.jsx
 │       ├── hooks/use[Module].js
 │       └── components/
-│           ├── [Entity]List.jsx ← NEW
-│           └── [Entity]Form.jsx ← NEW
+│           ├── [Entity]List.jsx
+│           └── [Entity]Form.jsx
 │
 ├── checklists/
 │   ├── new-project.checklist.md
-│   ├── pre-commit.checklist.md  ← Fixed: PowerShell commands
+│   ├── pre-commit.checklist.md
 │   ├── phase-validation.checklist.md
 │   ├── code-review.checklist.md
 │   └── launch-readiness.checklist.md
@@ -192,18 +208,18 @@ forge-rules/
 │   ├── 01-product-brief-example.md
 │   ├── 02-architecture-example.md
 │   ├── 03-agent-prompts-example.md
-│   ├── 04-review-report-example.md  ← NEW: Reviewer Agent output
-│   └── 05-backend-design-example.md ← NEW: Backend Agent output
+│   ├── 04-review-report-example.md
+│   ├── 05-backend-design-example.md
+│   └── 06-security-audit-example.md ← NEW
 │
-├── docs/                        ← NEW: Agent output documents folder
+├── docs/
 │   └── README.md
 │
 └── .github/
-    ├── PULL_REQUEST_TEMPLATE.md ← Auto-loaded by GitHub on PR creation
-    └── workflows/ci.yml
+    ├── PULL_REQUEST_TEMPLATE.md
+    └── workflows/
+        └── ci.yml               ← UPGRADED: Lighthouse CI, secret scanning, better bundle check
 ```
-
-> **PR Templates:** `.github/PULL_REQUEST_TEMPLATE.md` is auto-loaded by GitHub. `templates/PR-description.template.md` is the extended version for major features.
 
 ---
 
@@ -214,18 +230,23 @@ forge-rules/
 1. Read: checklists/new-project.checklist.md
 2. Activate CEO Agent → describe your idea
 3. Activate Architect Agent → paste Product Brief
-4. Follow: workflows/new-feature.md
+4. Activate Planner Agent → get sprint task list
+5. Follow: workflows/new-feature.md
 ```
 
-### Existing Project Audit
+### Production Bug (hotfix)
 ```
-"Act as Forge Reviewer Agent. Audit [file] against Forge Rules v2.2."
+Follow: workflows/hotfix.md
+```
+
+### New Developer Onboarding
+```
+Follow: workflows/onboarding.md
 ```
 
 ### AI System Instruction (paste-and-go)
 ```
 Copy full-rules-single-file.md → paste as system instruction
-Every AI response will follow Forge Rules automatically.
 ```
 
 ---
@@ -242,16 +263,19 @@ Every AI response will follow Forge Rules automatically.
 
 ---
 
-## 🆕 What's New in v2.3
+## 🆕 What's New in v2.4
 
 | Addition | Description |
 |----------|-------------|
-| **New Agent** | `agents/retro.md` — Weekly retrospective: 5-why root cause, exactly 3 action items |
-| **New Rule** | `rules/20-error-handling.md` — Service/hook/component error patterns, ErrorBoundary, translation |
-| **New Workflow** | `workflows/onboarding.md` — Get new developer productive in 2 hours |
-| **New Examples** | Review report example (04), Backend design example (05) |
-| **New Kiro Skill** | forge-retro |
-| **Updated** | `full-rules-single-file.md` — Chapters 19 & 20 added, Agent System Reference table |
+| **New Agent** | `agents/planner.md` — Sprint planning: task decomposition, estimates, dependency map |
+| **New Agent** | `agents/qa-manual.md` — Manual QA: exploratory, cross-browser, mobile, accessibility |
+| **New Rules** | Chapters 21-25: Mobile, i18n, API Design, Monitoring, Data Visualization |
+| **New Workflow** | `workflows/hotfix.md` — Emergency production fix protocol |
+| **New Templates** | vitest.config, playwright.config, test-setup |
+| **New Example** | `06-security-audit-example.md` — Real Security Agent output |
+| **New Kiro Skills** | forge-planner, forge-qa |
+| **Upgraded CI** | Lighthouse CI, secret scanning, better bundle analysis |
+| **Lighthouse Config** | `lighthouserc.json` — Performance budgets enforced in CI |
 
 ---
 
@@ -272,4 +296,4 @@ MIT — Use freely, adapt to your team, keep the attribution.
 
 **Author:** Siraj Nur Ihrom  
 **GitHub:** [@SIRAJcrypto11](https://github.com/SIRAJcrypto11)  
-**Version:** 2.3.0 — May 2026
+**Version:** 2.4.0 — May 2026

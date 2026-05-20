@@ -5,6 +5,42 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ---
 
+## [2.4.0] — May 2026
+
+### Added — New Agents
+- `agents/planner.md` — Sprint Planner: 6-phase planning protocol, task decomposition (one task = one file), time estimates with guidelines, dependency mapping, critical path analysis, risk assessment, definition of done
+- `agents/qa-manual.md` — Manual QA Engineer: 6-phase QA protocol, exploratory testing techniques (boundary, special chars, rapid clicks, concurrent), regression checklist, cross-browser testing, mobile testing, accessibility testing, structured bug report format
+
+### Added — New Rules (Chapters 21-25)
+- `rules/21-mobile-responsive.md` — Mobile-first philosophy, breakpoint system, touch targets (44×44px), safe area insets, bottom navigation, bottom sheet pattern, mobile form patterns, PWA considerations, mobile testing checklist
+- `rules/22-internationalization.md` — i18n architecture with react-i18next, locale file structure, Intl API for dates/numbers/currency, language switcher, locale-aware formatters, i18n rules and checklist
+- `rules/23-api-design-frontend.md` — API client architecture, service layer pattern, React Query integration with optimistic updates, query key centralization, cache invalidation strategy, real-time/WebSocket patterns
+- `rules/24-monitoring-observability.md` — Sentry setup with privacy (PII redaction), Web Vitals monitoring, logging standards, alert thresholds, incident response protocol
+- `rules/25-data-visualization.md` — Chart type selection guide, ChartWrapper component, chart color system, Recharts patterns, sparkline, chart accessibility, chart performance
+
+### Added — New Workflow
+- `workflows/hotfix.md` — Emergency production fix: decision tree, 7-step protocol (assess, branch, fix, expedited review, deploy, verify, post-mortem), anti-patterns, rollback procedure
+
+### Added — New Templates
+- `templates/vitest.config.template.js` — Complete Vitest config with coverage thresholds, path aliases, test patterns
+- `templates/playwright.config.template.ts` — Complete Playwright config with all browsers, mobile devices, web server
+- `templates/test-setup.template.js` — Test setup file with jsdom mocks, environment variables, console suppression
+
+### Added — New Example
+- `examples/06-security-audit-example.md` — Real Security Agent output: 3 CRITICAL, 2 HIGH, 2 MEDIUM findings with exploit scenarios and fixes
+
+### Added — New Kiro Skills
+- `kiro-skills/forge-planner/SKILL.md`
+- `kiro-skills/forge-qa/SKILL.md`
+
+### Added — New Config
+- `lighthouserc.json` — Lighthouse CI configuration with performance budgets (FCP < 1.5s, LCP < 2.5s, CLS < 0.1, TBT < 200ms, scores ≥ 90)
+
+### Upgraded
+- `.github/workflows/ci.yml` — Added Lighthouse CI job, secret scanning (TruffleHog), improved bundle size analysis, staging URL comment on PR, Slack notifications
+
+---
+
 ## [2.3.0] — May 2026
 
 ### Added — New Agent
