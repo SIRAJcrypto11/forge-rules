@@ -1,0 +1,64 @@
+{
+  "version": "3.0.0",
+  "description": "Intent-to-Agent routing table for Forge Rules intelligent agent system",
+  "last_updated": "2026-05-21",
+  "intents": {
+    "BUG_FIX": {
+      "keywords": ["bug", "broken", "not working", "error", "crash", "issue", "fails", "doesn't work", "problem"],
+      "primary_agent": "coder",
+      "secondary_agents": ["tester", "reviewer"],
+      "tertiary_agents": [],
+      "workflow": "workflows/situational/01-bug-fix.workflow.md",
+      "estimated_time": "1-4 hours",
+      "severity_levels": ["P0", "P1", "P2"],
+      "description": "Fix broken functionality or errors in the application"
+    },
+    "UI_IMPROVEMENT": {
+      "keywords": ["UI", "design", "visual", "layout", "styling", "colors", "typography", "look", "appearance", "modernize"],
+      "primary_agent": "ui",
+      "secondary_agents": ["coder", "a11y", "performance"],
+      "tertiary_agents": ["ux"],
+      "workflow": "workflows/situational/02-ui-improvement.workflow.md",
+      "estimated_time": "2 hours - 4 weeks",
+      "scope_levels": ["single_component", "multiple_components", "full_redesign"],
+      "description": "Improve visual design, styling, and appearance"
+    },
+    "UX_IMPROVEMENT": {
+      "keywords": ["UX", "user experience", "flow", "navigation", "usability", "confusing", "hard to use", "user journey"],
+      "primary_agent": "ux",
+      "secondary_agents": ["ui", "coder", "a11y"],
+      "tertiary_agents": ["qa-manual"],
+      "workflow": "workflows/situational/03-ux-improvement.workflow.md",
+      "estimated_time": "1-2 weeks",
+      "description": "Optimize user flows, navigation, and overall experience"
+    },
+    "PERFORMANCE_OPTIMIZATION": {
+      "keywords": ["slow", "performance", "optimize", "faster", "lag", "loading", "speed", "bottleneck"],
+      "primary_agent": "performance",
+      "secondary_agents": ["coder", "reviewer"],
+      "tertiary_agents": [],
+      "workflow": "workflows/situational/04-performance-optimization.workflow.md",
+      "estimated_time": "1-2 days",
+      "optimization_types": ["page_load", "runtime", "bundle_size"],
+      "description": "Improve application speed and performance"
+    },
+    "SECURITY_FIX": {
+      "keywords": ["security", "vulnerability", "XSS", "CSRF", "injection", "exploit", "CVE", "audit"],
+      "primary_agent": "security",
+      "secondary_agents": ["coder", "reviewer", "tester"],
+      "tertiary_agents": ["backend"],
+      "workflow": "workflows/situational/05-security-fix.workflow.md",
+      "estimated_time": "2 hours - 2 days",
+      "severity_levels": ["CRITICAL", "HIGH", "MEDIUM", "LOW"],
+      "description": "Fix security vulnerabilities and improve security posture"
+    },
+    "ACCESSIBILITY_FIX": {
+      "keywords": ["accessibility", "a11y", "screen reader", "keyboard", "WCAG", "contrast", "aria"],
+      "primary_agent": "a11y",
+      "secondary_agents": ["ui", "coder", "qa-manual"],
+      "tertiary_agents": ["reviewer"],
+      "workflow": "workflows/situational/06-accessibility-fix.workflow.md",
+      "estimated_time": "1-2 weeks",
+      "standards": ["WCAG 2.1 AA"],
+      "description": "Improve accessibility and WCAG compliance"
+    }
