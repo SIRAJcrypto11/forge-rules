@@ -62,3 +62,132 @@
       "standards": ["WCAG 2.1 AA"],
       "description": "Improve accessibility and WCAG compliance"
     }
+,
+    "REFACTORING": {
+      "keywords": ["refactor", "clean up", "improve code", "technical debt", "code quality", "messy"],
+      "primary_agent": "architect",
+      "secondary_agents": ["reviewer", "coder", "tester"],
+      "tertiary_agents": [],
+      "workflow": "workflows/situational/07-refactoring.workflow.md",
+      "estimated_time": "4 hours - 4 weeks",
+      "scope_levels": ["single_file", "component", "module", "full_system"],
+      "description": "Improve code quality and reduce technical debt"
+    },
+    "TESTING": {
+      "keywords": ["test", "testing", "coverage", "unit test", "E2E", "integration test"],
+      "primary_agent": "tester",
+      "secondary_agents": ["coder", "qa-manual"],
+      "tertiary_agents": ["reviewer"],
+      "workflow": "workflows/situational/08-testing.workflow.md",
+      "estimated_time": "1-2 weeks",
+      "test_types": ["unit", "integration", "component", "e2e"],
+      "description": "Add or improve test coverage"
+    },
+    "CODE_REVIEW": {
+      "keywords": ["review", "PR", "pull request", "code review", "feedback"],
+      "primary_agent": "reviewer",
+      "secondary_agents": ["security", "performance", "a11y"],
+      "tertiary_agents": [],
+      "workflow": "workflows/code-review.md",
+      "estimated_time": "30 minutes - 2 hours",
+      "description": "Review code changes for quality and compliance"
+    },
+    "DEBUGGING": {
+      "keywords": ["debug", "investigate", "troubleshoot", "diagnose", "root cause"],
+      "primary_agent": "coder",
+      "secondary_agents": ["tester", "browser"],
+      "tertiary_agents": [],
+      "workflow": "workflows/debug.md",
+      "estimated_time": "1-4 hours",
+      "description": "Investigate and diagnose issues"
+    },
+    "ARCHITECTURE_AUDIT": {
+      "keywords": ["architecture", "audit", "system design", "review architecture"],
+      "primary_agent": "architect",
+      "secondary_agents": ["reviewer", "security", "performance"],
+      "tertiary_agents": [],
+      "workflow": "workflows/situational/10-architecture-audit.workflow.md",
+      "estimated_time": "1-2 days",
+      "description": "Audit system architecture and design"
+    },
+    "API_DESIGN": {
+      "keywords": ["API", "endpoint", "backend", "REST", "GraphQL", "database"],
+      "primary_agent": "backend",
+      "secondary_agents": ["security", "coder", "tester"],
+      "tertiary_agents": [],
+      "workflow": "workflows/situational/11-api-design.workflow.md",
+      "estimated_time": "1-2 weeks",
+      "description": "Design and implement backend APIs"
+    },
+    "DATABASE_OPTIMIZATION": {
+      "keywords": ["database", "query", "slow query", "N+1", "index", "SQL"],
+      "primary_agent": "backend",
+      "secondary_agents": ["performance", "coder"],
+      "tertiary_agents": [],
+      "workflow": "workflows/situational/12-database-optimization.workflow.md",
+      "estimated_time": "2-3 days",
+      "description": "Optimize database queries and performance"
+    },
+    "DEPLOYMENT": {
+      "keywords": ["deploy", "CI/CD", "pipeline", "DevOps", "release"],
+      "primary_agent": "devops",
+      "secondary_agents": ["security", "tester"],
+      "tertiary_agents": [],
+      "workflow": "workflows/situational/13-deployment-setup.workflow.md",
+      "estimated_time": "1-2 days",
+      "description": "Set up deployment and CI/CD pipelines"
+    },
+    "MOBILE_OPTIMIZATION": {
+      "keywords": ["mobile", "responsive", "touch", "iOS", "Android", "PWA"],
+      "primary_agent": "ui",
+      "secondary_agents": ["ux", "performance", "a11y"],
+      "tertiary_agents": [],
+      "workflow": "workflows/situational/14-mobile-optimization.workflow.md",
+      "estimated_time": "1 week",
+      "description": "Optimize for mobile devices"
+    },
+    "INTERNATIONALIZATION": {
+      "keywords": ["i18n", "translation", "locale", "language", "multilingual"],
+      "primary_agent": "coder",
+      "secondary_agents": ["ux", "tester"],
+      "tertiary_agents": [],
+      "workflow": "workflows/situational/15-internationalization.workflow.md",
+      "estimated_time": "1 week",
+      "description": "Add multi-language support"
+    },
+    "DATA_VISUALIZATION": {
+      "keywords": ["chart", "graph", "dashboard", "visualization", "analytics"],
+      "primary_agent": "coder",
+      "secondary_agents": ["ui", "performance", "a11y"],
+      "tertiary_agents": [],
+      "workflow": "workflows/situational/16-data-visualization.workflow.md",
+      "estimated_time": "3-5 days",
+      "description": "Create charts and data visualizations"
+    },
+    "NEW_PROJECT": {
+      "keywords": ["new project", "start from scratch", "greenfield", "initialize"],
+      "primary_agent": "ceo",
+      "secondary_agents": ["architect", "planner"],
+      "tertiary_agents": ["devops"],
+      "workflow": "workflows/new-feature.md",
+      "estimated_time": "2-4 weeks",
+      "description": "Start a new project from scratch"
+    },
+    "NEW_FEATURE": {
+      "keywords": ["new feature", "add feature", "implement", "build"],
+      "primary_agent": "planner",
+      "secondary_agents": ["coder", "backend", "tester"],
+      "tertiary_agents": ["reviewer"],
+      "workflow": "workflows/new-feature.md",
+      "estimated_time": "1-2 weeks",
+      "description": "Add new functionality to existing project"
+    }
+  },
+  "metadata": {
+    "total_intents": 20,
+    "agent_count": 16,
+    "workflow_count": 20,
+    "last_updated": "2026-05-21",
+    "version": "3.0.0"
+  }
+}
